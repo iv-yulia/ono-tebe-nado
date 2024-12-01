@@ -16,7 +16,6 @@
 .overlay {
   position: absolute;
   inset: 0;
-  z-index: -1;
   width: 100%;
   height: 100%;
   opacity: 0.6;
@@ -26,7 +25,6 @@
 .header {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  grid-auto-rows: 105px;
   align-items: center;
   margin: 92px 24px 96px;
 }
@@ -78,7 +76,6 @@
 
 .cover {
   position: relative;
-  z-index: -2;
   display: flex;
   flex-direction: column;
   padding: 165px 50px 51px;
@@ -89,6 +86,7 @@
 }
 
 .cover__title {
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -105,16 +103,11 @@
   letter-spacing: 60px;
 }
 
-.no-letter-spacing {
-  letter-spacing: 0;
-}
-
 .aligned-text {
   line-height: 1.15;
 }
 
 .aligned-text_center {
-  padding-right: 30px;
   text-align: center;
 }
 
@@ -122,7 +115,12 @@
   text-align: end;
 }
 
+.no-letter-spacing {
+  letter-spacing: 0;
+}
+
 .cover__description {
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
@@ -141,7 +139,7 @@
 }
 
 .bet-button {
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   padding: 12px 32px;
   color: #fff;
   font-family: Raleway, sans-serif;
@@ -173,11 +171,13 @@
   gap: 25px;
   margin: 27px 0 30px;
   list-style: none;
+  flex-wrap: wrap;
 }
 
 .lots__card-list-item {
   width: 334px;
   min-height: 563px;
+  flex-grow: 1;
 }
 
 .card-link {
@@ -188,7 +188,6 @@
 
 .card {
   position: relative;
-  z-index: -2;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -212,6 +211,7 @@
 }
 
 .card__title {
+  z-index: 1;
   color: #fff;
   font-family: Raleway, sans-serif;
   font-weight: 700;
@@ -222,6 +222,7 @@
 }
 
 .card__text {
+  z-index: 1;
   color: #fff;
   font-family: Raleway, sans-serif;
   font-weight: 400;
